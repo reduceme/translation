@@ -1,0 +1,10 @@
+h1{color: #0aaaee}
+h2{color: #0aa868}
+
+/* 改变主题色变量 */
+$--color-primary: #67C23A;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: './element-ui/fonts';
+
+@import "./element-ui/index";
