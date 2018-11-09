@@ -4,11 +4,12 @@ import {Message} from 'element-ui'
 
 const state = {
   getNewsData: {
-    pageSize: 10,
+    pageSize: 20,
     pageNum: 1,
     display: true
   },
-  newsList: []
+  newsList: [],
+  total: 0
 }
 
 const mutations = {}
@@ -21,16 +22,11 @@ const actions = {
           item.cover = 'data:image/png;base64,' + item.cover
           state.newsList.push(item)
         })
-
-        /*let result = []
         let obj = {}
-        for (let i = 0; i < state.newsList.length; i++) {
-          if (!obj[state.newsList[i].key]) {
-            result.push(state.newsList[i])
-            obj[state.newsList[i].key] = true
-          }
-        }
-        state.newsList = result*/
+        state.newsList = state.newsList.reduce((cur, next) => {
+          obj[next.id] ? '' : obj[next.id] = true && cur.push(next)
+          return cur
+        }, [])
         state.getNewsData.pageNum++
       } else {
         Message.error({

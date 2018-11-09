@@ -97,9 +97,9 @@ export default{
         emailAddress: this.emailAddress
       })).then(response => {
         let data = response.data
-        if (data.success) {
+        if (!data.success) {
           Message.error({
-            message: '该邮箱已注册'
+            message: '该邮箱未注册'
           })
           return
         }

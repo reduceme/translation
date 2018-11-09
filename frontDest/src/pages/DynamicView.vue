@@ -49,7 +49,7 @@ export default{
     loadmore () {
       setTimeout(() => {
         this.$store.dispatch('getNewsList')
-      }, 2000)
+      }, 0.5)
     }
   },
   mounted () {

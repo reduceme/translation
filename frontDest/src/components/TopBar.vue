@@ -5,7 +5,7 @@
     </div>
     <div class="top-menu">
       <div class="img-content">
-        <img src="../images/log.png" height="90" width="90"/>
+        <img src="../images/logo.png" height="90" width="90"/>
       </div>
       <div class="menu-content">
         <ul>
@@ -94,7 +94,7 @@ export default {
     margin-left: 15%;
     width: 90px;
     height: 90px;
-    background: white;
+    /*background: white;*/
   }
 
   .menu-list{

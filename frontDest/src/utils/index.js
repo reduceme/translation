@@ -1,10 +1,10 @@
-/*const downloadFileUrl = 'http://115.29.106.226:1111/user/download'
+const downloadFileUrl = 'http://115.29.106.226:1111/user/download'
 const uploadFileUrl = 'http://115.29.106.226:1111/user/upload'
-const codeImg = 'http://115.29.106.226:1111/user/getCode'*/
+const codeImg = 'http://115.29.106.226:1111/user/getCode'
 
-const downloadFileUrl = 'http://192.168.3.37:1111/user/download'
+/*const downloadFileUrl = 'http://192.168.3.37:1111/user/download'
 const uploadFileUrl = 'http://192.168.3.37:1111/user/upload'
-const codeImg = 'http://192.168.3.37:1111/user/getCode'
+const codeImg = 'http://192.168.3.37:1111/user/getCode'*/
 
 const deWeight = function () {
   var res = []

@@ -12,8 +12,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false
 Vue.prototype.http = Axios
 // Axios.defaults.baseURL = ''
-// Axios.defaults.baseURL = 'http://115.29.106.226:1111/user/'
-Axios.defaults.baseURL = 'http://192.168.3.37:1111/user/'
+Axios.defaults.baseURL = 'http://115.29.106.226:1111/user/'
+// Axios.defaults.baseURL = 'http://192.168.3.37:1111/user/'
 Axios.defaults.withCredentials = true
 
 // Vue全局使用element-ui
