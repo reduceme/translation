@@ -14,9 +14,10 @@
       :limit="1"
       :multiple="false"
       :on-change="uploadFileRec"
+      :on-remove="clearRec"
       :on-exceed="exceedFn">
       <el-button slot="trigger" size="small" type="primary">上传单位推荐文件扫描件</el-button>
-      <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+      <div slot="tip" class="el-upload__tip">只能上传jpg/png文件</div>
     </el-upload>
     <el-upload
       class="upload-demo"
@@ -27,9 +28,10 @@
       :on-change="uploadFileSpe"
       :limit="1"
       :multiple="false"
+      :on-remove="clearSpeech"
       :on-exceed="exceedFn">
       <el-button slot="trigger" size="small" type="primary">上传复赛中英对照演讲稿</el-button>
-      <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+      <div slot="tip" class="el-upload__tip">只能上传docx/doc/pdf文件</div>
     </el-upload>
     <el-upload
       class="upload-demo"
@@ -40,12 +42,13 @@
       :on-change="uploadFileSpe1"
       :limit="1"
       :multiple="false"
+      :on-remove="clearSpeech1"
       :on-exceed="exceedFn">
       <el-button slot="trigger" size="small" type="primary">上传决赛中英对照演讲稿</el-button>
-      <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+      <div slot="tip" class="el-upload__tip">只能上传docx/doc/pdf文件</div>
     </el-upload>
     <span slot="footer" class="dialog-footer">
-      <el-button type="primary" @click.native="uploadFile">确 定</el-button>
+      <el-button type="primary" @click.native="uploadFile">确认上传</el-button>
     </span>
   </el-dialog>
 </template>
@@ -64,25 +67,43 @@ export default {
   },
   methods: {
     uploadFileSpe (file) {
-      this.$store.commit('updatePersonalFormData', {
-        name: 'speech',
-        file: file,
-        key: 'formDataSpe'
-      })
+      const isAllow = (file.name.substring(file.name.lastIndexOf('.') + 1)).toLowerCase()
+      let flag = this.fileType(['docx', 'doc', 'pdf'], isAllow)
+      if (flag) {
+        this.$store.commit('updatePersonalFormData', {
+          name: 'speech',
+          file: file,
+          key: 'formDataSpe'
+        })
+      } else {
+        this.$store.commit('clearPersonalFormData', 'speech')
+      }
     },
     uploadFileSpe1 (file) {
-      this.$store.commit('updatePersonalFormData', {
-        name: 'speech1',
-        file: file,
-        key: 'formDataSpe1'
-      })
+      const isAllow = (file.name.substring(file.name.lastIndexOf('.') + 1)).toLowerCase()
+      let flag = this.fileType(['docx', 'doc', 'pdf'], isAllow)
+      if (flag) {
+        this.$store.commit('updatePersonalFormData', {
+          name: 'speech1',
+          file: file,
+          key: 'formDataSpe1'
+        })
+      } else {
+        this.$store.commit('clearPersonalFormData', 'speech1')
+      }
     },
     uploadFileRec (file) {
-      this.$store.commit('updatePersonalFormData', {
-        name: 'recommandFile',
-        file: file,
-        key: 'formData'
-      })
+      const isJPG = (file.name.substring(file.name.lastIndexOf('.') + 1)).toLowerCase()
+      let flag = this.fileType(['jpg', 'jpeg', 'png'], isJPG)
+      if (flag) {
+        this.$store.commit('updatePersonalFormData', {
+          name: 'recommandFile',
+          file: file,
+          key: 'formData'
+        })
+      } else {
+        this.$store.commit('clearPersonalFormData', 'recommandFile')
+      }
     },
     exceedFn () {
       Message.error({
@@ -91,6 +112,29 @@ export default {
     },
     uploadFile () {
       this.$store.dispatch('updatePersonalFile')
+    },
+    fileType (typeList, filetype) {
+      let isAllow = false
+      for (let i = 0; i < typeList.length; i++) {
+        if (typeList[i] === filetype) {
+          isAllow = true
+        }
+      }
+      if (!isAllow) {
+        Message.error({
+          message: '上传文件格式不正确'
+        })
+      }
+      return isAllow
+    },
+    clearRec () {
+      this.$store.commit('clearPersonalFormData', 'recommandFile')
+    },
+    clearSpeech () {
+      this.$store.commit('clearPersonalFormData', 'speech')
+    },
+    clearSpeech1 () {
+      this.$store.commit('clearPersonalFormData', 'speech1')
     }
   },
   computed: {

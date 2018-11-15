@@ -19,7 +19,12 @@ const actions = {
       if (data.success) {
         state.userDetail = data.data
         state.userDetail.register = (state.userDetail.register === true ? '是' : '否')
-        state.userDetail.photo = 'data:image/png;base64,' + state.userDetail.photo
+        if (state.userDetail.photo) {
+          state.userDetail.flag = true
+          state.userDetail.photo = 'data:image/png;base64,' + state.userDetail.photo
+        } else {
+          state.userDetail.flag = false
+        }
       } else {
         Message.error({
           message: data.msg

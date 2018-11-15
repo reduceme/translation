@@ -62,9 +62,9 @@ const actions = {
   logout () {
     Axios.get('logout').then(response => {
       let data = response.data
-      if (data.success === false) {
+      if (!data.success) {
         router.push({
-          path: '/login/'
+          path: '/hkjyyds/login/loginComponent'
         })
         state.menuList[5].isShow = true
         state.menuList[6].isShow = false
@@ -72,16 +72,23 @@ const actions = {
         Message.success({
           message: '已退出'
         })
+        sessionStorage.setItem('userId', '')
       } else {
         Message.error({
           message: data.msg
         })
       }
     }).catch(response => {
-      console.log(response)
-      Message.error({
-        message: '网络连接失败111111111'
+      router.push({
+        path: '/hkjyyds/login/loginComponent'
       })
+      state.menuList[5].isShow = true
+      state.menuList[6].isShow = false
+      state.logInfo = state.logArr[0]
+      Message.success({
+        message: '已退出'
+      })
+      sessionStorage.setItem('userId', '')
     })
   }
 }

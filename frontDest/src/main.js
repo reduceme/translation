@@ -24,10 +24,13 @@ Axios.interceptors.response.use(function (response) {
     Element.Message.warning({
       message: '请先登录'
     })
+    store.TopBar.menuList[5].isShow = false
+    store.TopBar.menuList[6].isShow = true
+    store.TopBar.logInfo = store.TopBar.logArr[1]
     router.replace({
-      path: '/login',
-      query: {redirect: router.currentRoute.fullPath}
+      path: '/hkjyyds/login/loginComponent'
     })
+    sessionStorage.setItem('userId', '')
   }
   return response
 })

@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="public-content">
-      <h1>组织机构</h1>
+      <h1>&nbsp;&nbsp;&nbsp;&nbsp;组织机构</h1>
       <h2 class="has-background-h2">&nbsp;&nbsp;&nbsp;&nbsp;（一）主办单位</h2>
       <p>中国核学会</p>
       <p>四川省科协</p>
@@ -16,7 +16,7 @@
       <p>成都理工大学</p>
       <p>成都理工大学工程技术学院</p>
       <p>四川语言桥信息技术有限公司</p>
-      <p>成都奥尔数码科技有限公司</p>
+      <!--<p>成都奥尔数码科技有限公司</p>-->
       <h2 class="has-background-h2">&nbsp;&nbsp;&nbsp;&nbsp;（四）大赛组织委员会</h2>
       <p>主任委员</p>
       <p class="username">田东风（中国工程物理研究院副院长，中国核学会副理事长）</p>
@@ -49,6 +49,7 @@ export default {
     margin-left: 15%;
     text-align: left;
     padding: 50px 0;
+    background: white;
   }
 
   h1{

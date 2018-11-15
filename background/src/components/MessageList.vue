@@ -7,7 +7,7 @@
       <el-table-column
         prop="date"
         label="添加时间"
-        width="100">
+        width="180">
       </el-table-column>
       <el-table-column
         prop="from"

@@ -26,7 +26,7 @@
     </el-table-column>
     <el-table-column
       prop="localRegister"
-      label="是否审核通过"
+      label="注册状态"
       width="120">
     </el-table-column>
     <el-table-column

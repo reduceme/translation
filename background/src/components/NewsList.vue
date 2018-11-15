@@ -136,6 +136,7 @@ export default {
           isRewrite: 'true'
         }
       })
+      window.location.reload()
     }
   }
 }

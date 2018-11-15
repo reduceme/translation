@@ -58,7 +58,7 @@ const actions = {
         if (data.success) {
           state.userList.tableData = data.data.list
           state.userList.tableData.forEach(function (item) {
-            item.localRegister = (item.register === true ? '是' : '否')
+            item.localRegister = (item.register === true ? '注册完成' : '注册中')
           })
           state.userList.total = data.data.total
         }

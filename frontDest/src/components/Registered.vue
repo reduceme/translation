@@ -13,7 +13,6 @@
         :on-change="uploadImg">
         <img v-if="imageUrl" :src="imageUrl" class="avatar">
         <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-        <!--<span v-else>头像上传</span>-->
       </el-upload>
       <!--<p>头像为<2M的JPG文件</p>-->
       <div style="clear:both;"></div>
@@ -183,11 +182,15 @@ export default{
   },
   methods: {
     uploadImg (file) {
-      this.imageUrl = URL.createObjectURL(file.raw)
-      this.$store.commit('updateFormData', {
-        name: 'photo',
-        file: file
-      })
+      const isAllow = (file.name.substring(file.name.lastIndexOf('.') + 1)).toLowerCase()
+      let flag = this.fileType(['jpg', 'jpeg', 'png', 'gif'], isAllow)
+      if (flag) {
+        this.imageUrl = URL.createObjectURL(file.raw)
+        this.$store.commit('updateFormData', {
+          name: 'photo',
+          file: file
+        })
+      }
     },
     isUser () {
       Axios.post('isUser', QS.stringify({
@@ -300,7 +303,21 @@ export default{
           })
         }
       })
-    }
+    },
+    fileType (typeList, filetype) {
+      let isAllow = false
+      for (let i = 0; i < typeList.length; i++) {
+        if (typeList[i] === filetype) {
+          isAllow = true
+        }
+      }
+      if (!isAllow) {
+        Message.error({
+          message: '上传文件格式不正确'
+        })
+      }
+      return isAllow
+    },
   },
   computed: {
     userInfo: {

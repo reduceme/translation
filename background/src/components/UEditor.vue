@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import utils from '../utils/index'
 export default {
   name: 'UEditor',
   data () {
@@ -21,7 +22,7 @@ export default {
     // 初始化UE
     this.editor = UE.getEditor('editor', {
       BaseUrl: '',
-      UEDITOR_HOME_URL: '/static/UEditor/',
+      UEDITOR_HOME_URL: utils.uePath,
       initialFrameWidth: '100%',
       initialFrameHeight: 400,
       toolbars: [

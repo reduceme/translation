@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import topBar from '../store/moudles/topBar'
 export default {
   name: 'top-bar',
   computed: {
@@ -50,6 +51,14 @@ export default {
       if (loginInfo === '退出') {
         this.$store.dispatch('logout')
       }
+    }
+  },
+  mounted () {
+    let userId = sessionStorage.getItem('userId')
+    if (userId !== '') {
+      topBar.state.menuList[5].isShow = false
+      topBar.state.menuList[6].isShow = true
+      topBar.state.logInfo = topBar.state.logArr[1]
     }
   }
 }

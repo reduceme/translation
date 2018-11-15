@@ -27,6 +27,7 @@
           <p>&nbsp;&nbsp;手机号：</p>
           <el-input readonly v-model="personal.phoneNumber" placeholder="请输入联系方式"></el-input>
         </div>
+        <div style="clear:both;"></div>
       </div>
       <div class="user-info-content">
         <div class="content-same-style content-left">
@@ -37,11 +38,19 @@
           <p>&nbsp;&nbsp;邮箱：</p>
           <el-input readonly v-model="personal.emailAddress" placeholder="请输入邮箱"></el-input>
         </div>
+        <div style="clear:both;"></div>
       </div>
-      <div class="user-info-content" style="margin-left: 25px;width: calc(100% - 25px)">
-        <div class="content-same-style content-left" style="float: left; display: block">
+      <!--<div class="user-info-content" style="margin-left: 25px;width: calc(100% - 25px)">-->
+      <div class="user-info-content">
+        <!--<div class="content-same-style content-left" style="float: left; display: block">-->
+        <div class="content-same-style content-left">
           <p>&nbsp;&nbsp;工作单位：</p>
           <el-input readonly v-model="personal.work" placeholder="请输入工作单位"></el-input>
+        </div>
+        <!--<div class="content-same-style content-left" style="float: left; display: block">-->
+        <div class="content-same-style content-left">
+          <!--<p>&nbsp;&nbsp;工作单位：</p>-->
+          <!--<el-input readonly v-model="personal.work" placeholder="请输入工作单位"></el-input>-->
         </div>
         <div style="clear:both;"></div>
       </div>
@@ -50,29 +59,29 @@
         <p class="inline-document" style="cursor: pointer" @click="showModal">（点击上传）</p>
         <div style="clear:both;"></div>
         <div class="download-content">
-          <div @click="downloadFile(personal.recommandFile, 'rec')" class="download-inline download-left">
+          <div class="download-inline download-left">
             <div class="download-btn download-title">
               <p class="large-title">单位推荐函扫描件</p>
             </div>
-            <div class="download-btn download-icon">
+            <div class="download-btn download-icon" @click="downloadFile(personal.recommandFile, 'rec')">
               <i class="el-icon-download"></i>
             </div>
           </div>
-          <div @click="downloadFile(personal.speech, 'speech')" class="download-inline download-center">
+          <div class="download-inline download-center">
             <div class="download-btn download-title">
               <p class="large-title have-two-line">复赛演讲稿</p>
               <p>（中英文对照电子版）</p>
             </div>
-            <div class="download-btn download-icon">
+            <div class="download-btn download-icon" @click="downloadFile(personal.speech, 'speech')">
               <i class="el-icon-download"></i>
             </div>
           </div>
-          <div @click="downloadFile(personal.speech1, 'speech1')" class="download-inline download-right">
+          <div class="download-inline download-right">
             <div class="download-btn download-title">
               <p class="large-title have-two-line">决赛演讲稿</p>
               <p>（中英文对照电子版）</p>
             </div>
-            <div class="download-btn download-icon">
+            <div class="download-btn download-icon" @click="downloadFile(personal.speech1, 'speech1')">
               <i class="el-icon-download"></i>
             </div>
           </div>
@@ -240,7 +249,9 @@ export default{
   .content-same-style {
     width: calc(48% - 120px);
     height: 80px;
-    display: inline-block;
+    /*display: inline-block;*/
+    display: block;
+    float: left;
     padding: 10px 60px;
   }
 
@@ -340,9 +351,7 @@ export default{
     display: block;
     float: left;
   }
-</style>
 
-<style scoped>
   .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 50%;
@@ -381,5 +390,16 @@ export default{
 
   .has-gutter{
     display: none;
+  }
+</style>
+
+<style>
+  .el-table thead{
+    display: none;
+  }
+
+  .avatar-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 50%;
   }
 </style>

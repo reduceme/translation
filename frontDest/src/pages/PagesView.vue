@@ -26,5 +26,6 @@ export default {
   .pages-view {
     min-height: 100%;
     position: relative;
+    background: #E6F4FD url("../images/background.jpg") no-repeat bottom;
   }
 </style>

@@ -8,7 +8,7 @@
     </div>
     <div class="font-btn-content">
       <el-button class="submit-btn" type="primary">
-        <router-link class="little-title" :to="{path: 'about'}">返回首页</router-link>
+        <router-link class="little-title" :to="{path: '/hkjyyds/about'}">返回首页</router-link>
       </el-button>
     </div>
   </div>

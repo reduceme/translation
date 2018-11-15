@@ -9,7 +9,8 @@ const state = {
     display: true
   },
   newsList: [],
-  total: 0
+  total: 0,
+  showList: false
 }
 
 const mutations = {}
@@ -27,6 +28,9 @@ const actions = {
           obj[next.id] ? '' : obj[next.id] = true && cur.push(next)
           return cur
         }, [])
+        if (state.newsList.length === 0) {
+          state.showList = true
+        }
         state.getNewsData.pageNum++
       } else {
         Message.error({

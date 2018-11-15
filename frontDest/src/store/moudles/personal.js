@@ -2,6 +2,7 @@ import Axios from 'axios'
 import QS from 'qs'
 import topBar from './topBar'
 import {Message} from 'element-ui'
+import router from '../../router/index'
 
 const state = {
   userId: '',
@@ -25,13 +26,15 @@ const state = {
 
 const mutations = {
   updatePersonalFormData (state, fileInfo) {
-    state.formData.append(fileInfo.name, fileInfo.file.raw)
+    state.formData.set(fileInfo.name, fileInfo.file.raw)
+  },
+  clearPersonalFormData (state, name) {
+    state.formData.set(name, '')
   },
   updatePersonalModal (state, isShow) {
     state.uploadModal = isShow
   },
   uploadImgUrl (state, file) {
-    console.log(file)
     state.userInfo.photo = file
   }
 }
@@ -50,11 +53,15 @@ const actions = {
         for (let i in state.userInfo) {
           state.userInfo[i] = data.data[i]
         }
-        state.userInfo.registerMsg = (data.data.register === false ? ('选手状态：待审核') : '选手状态：已审核')
-        state.userInfo.photo = 'data:image/png;base64,' + state.userInfo.photo
+        state.userInfo.registerMsg = (data.data.register === false ? ('选手状态：待审核') : '选手状态：审核通过')
+        if (state.userInfo.photo) {
+          state.userInfo.photo = 'data:image/png;base64,' + state.userInfo.photo
+        }
       }
     }).catch(response => {
-      console.log(response)
+      Message.error({
+        message: '网络连接失败'
+      })
     })
   },
   updatePersonalFile () {
@@ -72,7 +79,9 @@ const actions = {
         })
       }
     }).catch(response => {
-      console.log(response)
+      Message.error({
+        message: '网络连接失败'
+      })
     })
   },
   getMessage () {

@@ -23,7 +23,7 @@
             <i slot="prefix" class="el-input__icon el-icon-view"></i>
           </el-input>
         </div>
-        <div class="login-input-parent">
+        <div class="login-input-parent" style="display: none">
           <el-input
             placeholder="请输入验证码"
             v-model="code"

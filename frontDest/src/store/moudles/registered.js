@@ -39,7 +39,10 @@ const mutations = {
     state.uploadModal = isShow
   },
   updateFormData (state, fileInfo) {
-    state.formData.append(fileInfo.name, fileInfo.file.raw)
+    state.formData.set(fileInfo.name, fileInfo.file.raw)
+  },
+  clearFormData (state, name) {
+    state.formData.set(name, '')
   }
 }
 
@@ -59,6 +62,8 @@ const actions = {
       Message.error({
         message: '请上传单位推荐文件扫描件'
       })
+      state.registerBtn.msg = '立即注册'
+      state.registerBtn.isDisabled = false
       return
     }
     Axios.post('register', state.formData).then(response => {

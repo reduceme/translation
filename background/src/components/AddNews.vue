@@ -39,6 +39,7 @@ export default {
       router.push({
         path: 'addNews'
       })
+      window.location.reload()
     },
     getNewsList () {
       this.$store.dispatch('getNewsList')

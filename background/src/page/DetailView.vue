@@ -2,7 +2,9 @@
   <div class="registered-input-content">
     <div class="img-content" style="margin-bottom: 20px">
       <div class="img-parent">
-        <img :src="userDetailInfo.photo" height="160" width="160" >
+        <!--<img v-if="userDetailInfo.flag" :src="userDetailInfo.photo" height="160" width="160" >-->
+        <img v-if="userDetailInfo.flag" :src="userDetailInfo.photo" height="160" width="160" >
+        <img v-if="!userDetailInfo.flag" src="../image/logo.png" height="160" width="160" >
       </div>
     </div>
     <div class="download-content">
@@ -80,11 +82,11 @@ export default {
 
 <style>
   .el-form--inline .el-form-item__content {
-    width: 70%;
+    width: 65%;
   }
 
   .el-form--inline .el-form-item__label {
-    width: 90px;
+    width: 100px;
   }
 </style>
 

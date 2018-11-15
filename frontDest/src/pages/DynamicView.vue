@@ -14,6 +14,9 @@
         <p class="time">{{item.date}}</p>
       </div>
     </div>
+    <div class="has-no-news" v-if="showList">
+      <h1>大赛动态待发布……</h1>
+    </div>
   </div>
 </template>
 
@@ -29,6 +32,11 @@ export default{
     newsList: {
       get () {
         return this.$store.state.Dynamic.newsList
+      }
+    },
+    showList: {
+      get () {
+        return this.$store.state.Dynamic.showList
       }
     }
   },
@@ -56,7 +64,7 @@ export default{
     window.addEventListener('scroll', this.handleScroll, true)
     this.$store.dispatch('getNewsList')
   },
-  destoryed () {
+  destroyed () {
     window.removeEventListener('scroll', this.handleScroll, true)
   }
 }
@@ -64,9 +72,11 @@ export default{
 
 <style scoped>
   .container {
-    width: 70%;
-    margin: 50px 15%;
+    width: calc(70% - 160px);
+    margin: 0 15%;
     min-height: 700px;
+    background: white;
+    padding: 50px 80px;
   }
 
   .content {
@@ -113,6 +123,10 @@ export default{
 
   .time {
     text-align: right;
+  }
+
+  .has-no-news {
+    line-height: 500px;
   }
 </style>
 

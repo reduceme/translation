@@ -54,9 +54,10 @@ export default {
 
 <style scoped>
   .content {
-    width: 70%;
+    width: calc(70% - 160px);
     margin-left: 15%;
-    padding: 50px 0;
+    padding: 50px 80px;
+    background: white;
   }
 
   .line-info-title {
