@@ -15,6 +15,7 @@ import PersonalCenter from '../pages/PersonalCenterView.vue'
 import LoginComponent from '../components/Login.vue'
 import ForgetPsw from '../components/ForgetPassword.vue'
 import NewsDetails from '../pages/NewsDetails.vue'
+import Test from '../pages/Test.vue'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ const router = new Router({
     {
       path: '*',
       redirect: '/hkjyyds/about'
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: Test
     },
     {
       path: '/hkjyyds',
