@@ -21,8 +21,8 @@
    */
   window.UEDITOR_HOME_URL = '/static/Ueditor'
   // var URL = window.UEDITOR_HOME_URL || getUEBasePath();
-  // var URL = "http://192.168.3.37/user/";
-  var URL = "http://115.29.106.226:1111/user/";
+  // var URL = "http://192.168.3.37:1111/user/";
+  var URL = "http://192.168.2.251:1111/user/";
   /**
    * 配置项主体。注意，此处所有涉及到路径的配置别遗漏URL变量。
    */
@@ -34,7 +34,7 @@
     // 服务器统一请求接口路径
     // , serverUrl: URL + 'jsp/controller.jsp'
     // , serverUrl: 'http://192.168.3.37:1111/user/ueditor'
-    , serverUrl: 'http://115.29.106.226:1111/user/ueditor'
+    , serverUrl: 'http://192.168.2.251:1111/user/ueditor'
 
     // 工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的重新定义
     , toolbars: [[

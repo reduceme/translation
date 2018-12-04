@@ -7,12 +7,13 @@ import store from './store'
 // 引用element-ui框架
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import TopBar from './store/moudles/topBar'
 
 // 设置
 Vue.config.productionTip = false
 Vue.prototype.http = Axios
 // Axios.defaults.baseURL = ''
-Axios.defaults.baseURL = 'http://115.29.106.226:1111/user/'
+Axios.defaults.baseURL = 'http://192.168.2.251:1111/user/'
 // Axios.defaults.baseURL = 'http://192.168.3.37:1111/user/'
 Axios.defaults.withCredentials = true
 
@@ -24,9 +25,9 @@ Axios.interceptors.response.use(function (response) {
     Element.Message.warning({
       message: '请先登录'
     })
-    store.TopBar.menuList[5].isShow = false
-    store.TopBar.menuList[6].isShow = true
-    store.TopBar.logInfo = store.TopBar.logArr[1]
+    TopBar.menuList[5].isShow = true
+    TopBar.menuList[6].isShow = false
+    TopBar.logInfo = TopBar.logArr[0]
     router.replace({
       path: '/hkjyyds/login/loginComponent'
     })

@@ -55,7 +55,7 @@ export default {
   },
   mounted () {
     let userId = sessionStorage.getItem('userId')
-    if (userId !== '') {
+    if (userId) {
       topBar.state.menuList[5].isShow = false
       topBar.state.menuList[6].isShow = true
       topBar.state.logInfo = topBar.state.logArr[1]

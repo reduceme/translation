@@ -20,7 +20,7 @@
     </p>
     <div style="clear:both;"></div>
     <div class="font-btn-content">
-      <el-button class="submit-btn" @click.native="login" type="primary">登录</el-button>
+      <el-button class="submit-btn" @click.native.enter="login" type="primary">登录</el-button>
     </div>
   </div>
 </template>

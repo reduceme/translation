@@ -1,5 +1,4 @@
 import Axios from 'axios'
-import QS from 'qs'
 import router from '../../router'
 import {Message} from 'element-ui'
 
