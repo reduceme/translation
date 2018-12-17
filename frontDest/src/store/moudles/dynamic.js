@@ -16,7 +16,7 @@ const state = {
 const mutations = {}
 
 const actions = {
-  getNewsList () {
+  getNewsList() {
     Axios.post('findAllNews', QS.stringify(state.getNewsData)).then(response => {
       if (response.data.success) {
         response.data.data.list.forEach(function (item) {

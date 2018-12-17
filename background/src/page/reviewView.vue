@@ -1,6 +1,6 @@
 <template>
-  <div class="container" v-html="html">
-    {{html}}
+  <div class="container">
+    <div class="news-content" v-html="html">{{html}}</div>
   </div>
 </template>
 
@@ -20,4 +20,17 @@ export default{
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+  .container {
+    min-height: 800px;
+    width: calc(70% - 160px);
+    margin: 0 15%;
+    background: white;
+    padding: 50px 80px;
+  }
+
+  .news-content {
+    width: 100%;
+    /*padding: 50px 100px;*/
+  }
+</style>

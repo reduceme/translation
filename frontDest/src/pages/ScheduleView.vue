@@ -10,7 +10,7 @@
         <p>单位初赛及选拔</p>
       </div>
       <div class="inline-div competition-center">
-        <p class="time-content">时间：2019年2月28日前</p>
+        <p class="time-content">时间：2019年3月28日前</p>
         <p class="context-content">由各单位自行组织初选，推荐选拔1-3名优秀者进入复赛。被推荐选拔的选手应同时准备参加复赛和决赛的中英文对照演讲稿备赛。</p>
       </div>
       <div class="inline-div competition-right"></div>
