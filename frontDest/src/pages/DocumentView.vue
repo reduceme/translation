@@ -3,7 +3,7 @@
     <div class="content-inline content-left">
       <div class="left-item" style="color: #319302">通知文件</div>
       <div class="left-item">
-        <a target="_blank" class="href-a" href="http://www.ns.org.cn/art/2018/8/9/art_56_471.html?from=groupmessage">四部委文件</a>
+        <a target="_blank" class="href-a" href="http://www.ns.org.cn/art/2018/8/9/art_56_471.html?from=groupmessage">中国科协文件</a>
       </div>
     </div>
     <div class="content-inline content-right">
@@ -46,7 +46,7 @@
         <h4>&nbsp;&nbsp;&nbsp;&nbsp;三、 奖项设置</h4>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;本次大赛设一、二、三等奖、演讲风采奖、优秀选手奖和优秀组织奖。获奖选手及获得优秀组织奖的单位将获得由主办单位联名颁发的“科普中国，绿色核能——首届全国核行业科技英语演讲大赛”获奖证书及奖品。</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;比赛结束后，将由大赛组委会组织出版《科普中国，绿色核能——首届全国核行业科技英语演讲大赛演讲稿中英文文集（暂名）》。参加复赛和决赛的选手向大赛组委会办公室函寄书面版权转让授权书，即可委托大赛组委会将其演讲稿收入演讲文集，未出具该授权书的演讲稿不收入该文集。</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;在比赛结束后，将由大赛组委会组织出版《科普中国，绿色核能——首届全国核行业科技英语演讲大赛演讲稿中英文文集（暂名）》。参加复赛和决赛的选手提交中英文对照演讲稿后，即视为版权自动转让。大赛组委会在文集出版时有权进行编辑加工修改。</p>
+        <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;比赛结束后，将由大赛组委会组织出版《科普中国，绿色核能——首届全国核行业科技英语演讲比赛演讲稿中英文文集（暂名）》。参加复赛和决赛的选手向大赛组委会办公室函寄书面版权转让授权书，即可委托大赛组委会将其演讲稿收入演讲文集，未出具该授权书的演讲稿不收入该文集。</p>-->
         <h4>&nbsp;&nbsp;&nbsp;&nbsp;四、 大赛组织机构</h4>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;（一）主办单位</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;中国核学会</p>

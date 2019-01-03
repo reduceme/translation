@@ -15,7 +15,6 @@ import PersonalCenter from '../pages/PersonalCenterView.vue'
 import LoginComponent from '../components/Login.vue'
 import ForgetPsw from '../components/ForgetPassword.vue'
 import NewsDetails from '../pages/NewsDetails.vue'
-import Test from '../pages/Test.vue'
 
 Vue.use(Router)
 
@@ -30,11 +29,6 @@ const router = new Router({
     {
       path: '*',
       redirect: '/hkjyyds/about'
-    },
-    {
-      path: '/test',
-      name: 'test',
-      component: Test
     },
     {
       path: '/hkjyyds',
@@ -52,7 +46,7 @@ const router = new Router({
           name: 'AboutCompetition',
           component: AboutCompetition,
           meta: {
-            title: '大赛简介'
+            title: '首届全国核行业科技英语演讲大赛'
           }
         },
         {
@@ -60,7 +54,7 @@ const router = new Router({
           name: 'mechanism',
           component: Mechanism,
           meta: {
-            title: '组织机构'
+            title: '首届全国核行业科技英语演讲大赛'
           }
         },
         {
@@ -68,7 +62,7 @@ const router = new Router({
           name: 'schedule',
           component: Schedule,
           meta: {
-            title: '预定赛程'
+            title: '首届全国核行业科技英语演讲大赛'
           }
         },
         {
@@ -76,7 +70,7 @@ const router = new Router({
           name: 'document',
           component: Document,
           meta: {
-            title: '通知文件'
+            title: '首届全国核行业科技英语演讲大赛'
           }
         },
         {
@@ -84,7 +78,7 @@ const router = new Router({
           name: 'dynamic',
           component: Dynamic,
           meta: {
-            title: '大赛动态'
+            title: '首届全国核行业科技英语演讲大赛'
           }
         },
         {
@@ -92,7 +86,7 @@ const router = new Router({
           name: 'newsDetails',
           component: NewsDetails,
           meta: {
-            title: '大赛动态'
+            title: '首届全国核行业科技英语演讲大赛'
           }
         },
         {
@@ -107,14 +101,14 @@ const router = new Router({
             name: 'loginComponent',
             component: LoginComponent,
             meta: {
-              title: '选手登录'
+              title: '首届全国核行业科技英语演讲大赛'
             }
           }, {
             path: 'forgetPsw',
             name: 'forgetPsw',
             component: ForgetPsw,
             meta: {
-              title: '忘记密码'
+              title: '首届全国核行业科技英语演讲大赛'
             }
           }]
         },
@@ -132,7 +126,7 @@ const router = new Router({
             name: 'registeredChild',
             component: RegisteredChild,
             meta: {
-              title: '选手注册'
+              title: '首届全国核行业科技英语演讲大赛'
             }
           },
           {
@@ -140,7 +134,7 @@ const router = new Router({
             name: 'notice',
             component: Notice,
             meta: {
-              title: '注册须知'
+              title: '首届全国核行业科技英语演讲大赛'
             }
           },
           {
@@ -148,7 +142,7 @@ const router = new Router({
             name: 'completeRegistered',
             component: CompleteRegistered,
             meta: {
-              title: '注册完成'
+              title: '首届全国核行业科技英语演讲大赛'
             }
           }]
         }, {
@@ -156,7 +150,7 @@ const router = new Router({
           name: 'personalCenter',
           component: PersonalCenter,
           meta: {
-            title: '个人中心'
+            title: '首届全国核行业科技英语演讲大赛'
           }
         }
       ]
