@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import PagesView from '../pages/PagesView.vue'
 import AboutCompetition from '../pages/AboutCompetitionView.vue'
+import Rule from '../pages/RuleView'
 import Mechanism from '../pages/MechanismView.vue'
 import Schedule from '../pages/ScheduleView.vue'
 import Document from '../pages/DocumentView.vue'
@@ -45,6 +46,14 @@ const router = new Router({
           path: 'about',
           name: 'AboutCompetition',
           component: AboutCompetition,
+          meta: {
+            title: '首届全国核行业科技英语演讲大赛'
+          }
+        },
+        {
+          path: 'rule',
+          name: 'Rule',
+          component: Rule,
           meta: {
             title: '首届全国核行业科技英语演讲大赛'
           }

@@ -29,6 +29,11 @@ const state = {
     key: '5',
     isShow: true
   }, {
+    name: '比赛规程',
+    url: '/hkjyyds/rule',
+    key: '8',
+    isShow: true
+  }, {
     name: '选手注册',
     url: '/hkjyyds/registered/registeredChild',
     key: '6',

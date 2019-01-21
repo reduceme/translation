@@ -133,7 +133,7 @@ export default {
 
   li {
     display: inline-block;
-    width: 16.6%;
+    width: 14.2%;
   }
 
   a {
